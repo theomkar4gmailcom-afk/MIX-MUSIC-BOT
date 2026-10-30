@@ -1,0 +1,10 @@
+
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+API_ID = int(os.getenv(36782950))
+API_HASH = os.getenv(608266c1128508c4503e3e3b08f526a5)
+BOT_TOKEN = os.getenv(8991691685:AAFifmG5GYqPabQEv-x4aooQTby4PEYVUeU)
+SESSION_STRING = os.getenv(BQCZzqEAhwkpkv0N3pclDnVkbw6EPawVOY9_3MZcLjT8r3Tamdeph0y1obkrd8BR9PGPpEfYW8bdE9VLveqh4rlsSfFt68IKJ9NmmT6T4wyqLjYsv4ZLLj1N38ys4pTSMuPkg0CDn_00OVKgIcDC424vhdmbWNtosNEYdlOfKTFjDKh8-uMAOcJcPnA585z0PYtBeu3vOcYwAeMw7525yaOMLlaFtyxrCQyMFGb0RLONnNuvAMuX3JC6n9fwmVK6O7F_vDOEQ3V8n41XK7G7A8dsE3YKlEhb2lCxW-sKplscoxKH7vhCMKYyVv37IycvWpAN5Bd5QOctBlMLsEIS1gx2rNuQNQAAAAIM1uqnAA)
