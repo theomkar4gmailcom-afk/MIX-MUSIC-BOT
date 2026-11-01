@@ -1,1 +1,52 @@
 
+from telegram import Update
+from telegram.ext import (
+    ApplicationBuilder,
+    CommandHandler,
+    ContextTypes
+)
+
+BOT_TOKEN = "9157291342:AAE4r19dWFE9LpGCoSU4xnU3PML7I3AjDwI"
+
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "👋 Welcome!\n\n"
+        "I am a Simple Helper Bot.\n"
+        "Use /help to see my commands."
+    )
+
+async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "🤖 Helper Bot Commands:\n\n"
+        "/start - Start bot\n"
+        "/help - Show help\n"
+        "/id - Get your Telegram ID\n"
+        "/info - Get your name\n"
+        "/ping - Check bot status"
+    )
+
+async def get_id(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        f"🆔 Your ID: {update.effective_user.id}"
+    )
+
+async def info(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user = update.effective_user
+    await update.message.reply_text(
+        f"👤 Name: {user.first_name}\n"
+        f"🆔 ID: {user.id}"
+    )
+
+async def ping(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text("🏓 Bot is Online!")
+
+app = ApplicationBuilder().token(BOT_TOKEN).build()
+
+app.add_handler(CommandHandler("start", start))
+app.add_handler(CommandHandler("help", help_command))
+app.add_handler(CommandHandler("id", get_id))
+app.add_handler(CommandHandler("info", info))
+app.add_handler(CommandHandler("ping", ping))
+
+print("🤖 Helper Bot Started!")
+app.run_polling()
